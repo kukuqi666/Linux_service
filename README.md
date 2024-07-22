@@ -33,6 +33,9 @@ The `Linux_service` repository contains scripts for managing Linux services. The
     python3 scripts.py
     ```
 
+If you don’t have a python environment, you can enter the script and run the script separately.
+If you have a python environment, you can also directly execute the python file
+
 ## Contributing
 Feel free to fork the repository, make your changes, and submit a pull request.
 
