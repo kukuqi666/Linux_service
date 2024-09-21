@@ -1,11 +1,11 @@
 import os
 import subprocess
 def run_script(script_name):
-    script_path = os.path.join('/home/ubuntu/桌面/tool/scripts', script_name)
+    script_path = os.path.join('/home/ubuntu/桌面/tool/ubuntu', script_name)
     if not os.path.isfile(script_path):
         print(f"错误: 找不到脚本 {script_path}")
         return
-    if not os.access(script_path, os.X_OK):
+    if not os.access(script_path, os.sh_OK):
         print(f"错误: 脚本 {script_path} 没有可执行权限")
         return
     try:
@@ -19,13 +19,13 @@ def run_script(script_name):
 
 def main():
     scripts = {
-        "1": "database_tool.x",
-        "2": "manage_server.x",
-        "3": "view_source.x",
-        "4": "settings.x",
-        "5": "ufw.x",
-        "6": "install_server.x",
-        "7": "uninstall.x",
+        "1": "database_tool.sh",
+        "2": "manage_server.sh",
+        "3": "view_source.sh",
+        "4": "settings.sh",
+        "5": "ufw.sh",
+        "6": "install_server.sh",
+        "7": "uninstall.sh",
         "q": "退出"
     }
     

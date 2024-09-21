@@ -23,14 +23,14 @@ The `Linux_service` repository contains scripts for managing Linux services. The
 1. **Running Shell Scripts**:
     Navigate to the `scripts` directory and execute the desired shell script. For example:
     ```bash
-    cd scripts
+    cd ubuntu
     ./example_script.sh
     ```
 
 2. **Running Python Script**:
     Execute the `scripts.py` file from the root directory:
     ```bash
-    python3 scripts.py
+    python3 ubuntu.py
     ```
 
 If you don’t have a python environment, you can enter the script and run the script separately.
