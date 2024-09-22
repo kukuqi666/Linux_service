@@ -15,6 +15,8 @@ print_help() {
     echo "5. Check Firewall Status"
     echo "6. Check if Port is Open"
     echo "7. Allow Specific Port through Firewall"
+    echo "8. List Open Ports"
+    echo "9. List Docker Open Ports"
     echo "q. Quit"
 }
 
@@ -93,6 +95,18 @@ allow_port() {
     firewall-cmd --reload
 }
 
+# 列出开放的端口
+list_open_ports() {
+    echo "Listing open ports:"
+    firewall-cmd --list-ports
+}
+
+# 列出docker开放的端口
+list_docker_open_ports() {
+    echo "Listing open ports in the 'docker' zone:"
+    firewall-cmd --zone=docker --list-ports
+}
+
 # 主逻辑
 while true; do
     print_help
@@ -119,6 +133,12 @@ while true; do
             ;;
         7)
             allow_port
+            ;;
+        8)
+            list_open_ports
+            ;;
+        9)
+            list_docker_open_ports
             ;;
         q)
             exit 0
