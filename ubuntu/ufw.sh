@@ -15,6 +15,8 @@ print_help() {
     echo "5. Check Firewall Status"
     echo "6. Check if Port is Open"
     echo "7. Allow Specific Port through Firewall"
+    echo "8. List Open Ports"
+    echo "9. List Docker Open Ports"
     echo "q. Quit"
 }
 
@@ -88,6 +90,20 @@ allow_port() {
     fi
 }
 
+# 列出开放的端口
+list_open_ports() {
+     echo "Listing open ports:"
+     sudo ufw status numbered
+}
+
+# 列出docker开放的端口
+list_docker_open_ports() {
+     echo "Listing open ports in the 'docker' zone:"
+     # Docker 使用自定义的链，可能需要使用特定的命令来列出
+     # 这里假设docker使用的是ufw来管理端口，实际情况可能需要根据具体配置来调整
+     sudo ufw status | grep -i docker
+}
+
 # 主逻辑
 while true; do
     print_help
@@ -114,6 +130,12 @@ while true; do
             ;;
         7)
             allow_port
+            ;;
+	8)
+            list_open_ports
+            ;;
+	9)
+            list_docker_open_ports
             ;;
         q)
             exit 0
